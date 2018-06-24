@@ -108,3 +108,55 @@
 .button-three:hover::before {
     transform: translateX(0px) skewX(0deg);
 }
+
+.button-four {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: orangered;
+    border: 1px solid white;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+}
+
+.button-four:focus {
+    outline: none;
+}
+
+.button-four:hover {
+    width: 200px;
+    border-radius: 25px;
+}
+
+.button-four::before {
+    content: 'Noice!';  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.button-four::after {
+    content: 'I am awesome';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: transform 0.2s linear 0.2s, opacity 0.01s;
+}
+
+.button-four:hover::before {
+    opacity: 0;
+}
+
+.button-four:hover::after {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
