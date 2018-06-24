@@ -1,14 +1,14 @@
-button {
+.button-one {
     position: relative;
     height: 100px;
     width: 200px;
-    background: transparent;
+    background: none;
     font-size: 18px;
     text-transform: uppercase;
     overflow: hidden;
 }
 
-button::before {
+.button-one::before {
     content: '';
     position: absolute;
     top: 0;
@@ -22,6 +22,40 @@ button::before {
     transition-duration: 0.5s;
 }
 
-button:hover::before {
+.button-one:hover::before {
     transform: rotate(0deg);
+}
+
+.button-two {
+    background: linear-gradient(45deg, #fff 50%, orangeRed 50%);
+    width: 240px;
+    height: 80px;
+    border: 2px solid orangeRed;
+    font-size: 18px;
+    border-radius: 4px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.button-two::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, orangeRed 50%, transparent 50%);
+    z-index: -1;
+}  
+
+.button-two,.button-two::after {
+    background-size: 300%;
+    background-position: 100%;
+    transition: background-position 1s, font-size 0.2s;
+}   
+
+.button-two:hover, .button-two:hover::after {
+    background-position: 0;
+    font-size: 1.1em;
 }
