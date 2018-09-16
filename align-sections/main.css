@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.section-one {
+    display: inline-block;
+    max-width: 250px;
+}
+
+.section-two {
+    display: inline-block;
+    max-width: 620px;
+    vertical-align: top;
+}
